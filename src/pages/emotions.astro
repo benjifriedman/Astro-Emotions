@@ -1,0 +1,145 @@
+---
+import { readAll } from "../lib/markdoc/read";
+import { project } from "../lib/markdoc/frontmatter.schema";
+import PageLayout from "../layouts/PageLayout.astro";
+import PageMeta from "../components/PageMeta.astro";
+import { SITE_TITLE } from "../config";
+
+const projects = await readAll({
+  directory: "projects",
+  frontmatterSchema: project,
+});
+
+const sortedProjects = projects
+  .filter((p) => p.frontmatter.draft !== true)
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  );
+---
+
+<PageLayout>
+  <PageMeta title={`Projects | ${SITE_TITLE}`} slot="meta" />
+  <section slot="main">
+    <ul>
+      {
+        sortedProjects.map((project) => {
+          const formattedDate = new Date(
+            project.frontmatter.date
+          ).toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          });
+          return (
+          <ul>
+<li>Happiness</li>
+<li>Sadness</li>
+<li>Anger</li>
+<li>Fear</li>
+<li>Surprise</li>
+<li>Disgust</li>
+<li>Trust</li>
+<li>Joy</li>
+<li>Love</li>
+<li>Envy</li>
+<li>Jealousy</li>
+<li>Shame</li>
+<li>Guilt</li>
+<li>Excitement</li>
+<li>Contentment</li>
+<li>Pride</li>
+<li>Humiliation</li>
+<li>Boredom</li>
+<li>Anxiety</li>
+<li>Frustration</li>
+<li>Disappointment</li>
+<li>Embarrassment</li>
+<li>Gratitude</li>
+<li>Sorrow</li>
+<li>Despair</li>
+<li>Fury</li>
+<li>Indignation</li>
+<li>Dread</li>
+<li>Hope</li>
+<li>Optimism</li>
+<li>Pessimism</li>
+<li>Melancholy</li>
+<li>Nostalgia</li>
+<li>Amusement</li>
+<li>Awe</li>
+<li>Inspiration</li>
+<li>Serenity</li>
+<li>Ecstasy</li>
+<li>Rapture</li>
+<li>Euphoria</li>
+<li>Elation</li>
+<li>Grief</li>
+<li>Anguish</li>
+<li>Horror</li>
+<li>Terror</li>
+<li>Panic</li>
+<li>Stress</li>
+<li>Nervousness</li>
+<li>Irritation</li>
+<li>Impatience</li>
+<li>Enthusiasm</li>
+<li>Passion</li>
+<li>Enrage</li>
+<li>Outrage</li>
+<li>Fury</li>
+<li>Wrath</li>
+<li>Hostility</li>
+<li>Aggression</li>
+<li>Anticipation</li>
+<li>Interest</li>
+<li>Curiosity</li>
+<li>Confusion</li>
+<li>Disorientation</li>
+<li>Skepticism</li>
+<li>Doubt</li>
+<li>Contempt</li>
+<li>Scorn</li>
+<li>Derision</li>
+<li>Pity</li>
+<li>Sympathy</li>
+<li>Empathy</li>
+<li>Compassion</li>
+<li>Tenderness</li>
+<li>Affection</li>
+<li>Adoration</li>
+<li>Devotion</li>
+<li>Fondness</li>
+<li>Love</li>
+<li>Lust</li>
+<li>Infatuation</li>
+<li>Crush</li>
+<li>Obsession</li>
+<li>Enamored</li>
+<li>Amazed</li>
+<li>Astonished</li>
+<li>Awed</li>
+<li>Mesmerized</li>
+<li>Baffled</li>
+<li>Perplexed</li>
+<li>Mystified</li>
+<li>Intrigued</li>
+<li>Puzzled</li>
+<li>Stupefied</li>
+<li>Dazed</li>
+<li>Confounded</li>
+<li>Bewildered</li>
+<li>Dumbfounded</li>
+<li>Flabbergasted</li>
+<li>Stunned</li>
+<li>Speechless.</li>
+</ul>
+          );
+        })
+      }
+    </ul>
+  </section>
+</PageLayout>
+
+
